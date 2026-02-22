@@ -22,6 +22,139 @@ NOTE: Any global function can be declared as a friend function, the keyword frie
 - The Order in which the friend function is defined of another class is important and should be taken care of
 - One has to define both the classes before function definition
 
+- SYNTAX
+------------------------------------------------------------------------------------------
+1: Global Friend Function(Access Multiple classes)
+  # include <iostream>
+  using namespace std;
+  //forward declaration of class B
+  class ClassB;
+
+  class ClassA{
+    private: DataType private_variable_A;
+
+    public: void setData(DataType value){
+        private_var_A = value;
+    
+    }
+    //friend function declaration
+    friend ReturnType FriendFunction(ClassA, ClassB);
+  };
+
+  class ClassB{
+    private: DataType private_var_B;
+    public: void setData(DataType value){
+        private_var_B = value;
+    }
+
+    friend ReturnType FriendFunction(ClassA, ClassB);
+  };
+
+  //Define the friend function
+  ReturnType FriendFunction(ClassA objA, ClassB objB){
+    //access private members directly
+    if(objA.private_var_A > objB.private_var_B){
+        cout <<objA.private_var_A << endl;
+    } else {
+        cout <<objB.private_var_B << endl;
+    }
+  }
+
+  int main(){
+    ClassA object;
+    ClassB object2;
+    object.SetData(Value1);
+    object2.SetData(Value2);
+
+    FriendFunction(object, object2);
+    return 0;
+  }
+------------------------------------------------------------------------------------------
+
+2: MEMBER FUNCTION
+  #include <iostream>
+  using namespace std;
+
+  class TargetClass;
+
+  class FriendClass{
+    public: ReturnType MemberFunction(TargetClass& obj);
+  }
+
+  class TargetClass{
+    private: DataType private_member;
+    protected: DataType protected_member;
+
+    public: TargetClass(){/* Initialize variables */}
+    //Grant access to only specific member function
+    friend ReturnType FriendClass::MemberFunction(TargetClass&);
+  };
+
+  void FriendClass::MemberFunction(TargetClass& obj){
+    cout <<" Access Private members: " <<obj.private_member << endl;
+    cout <<"Access Protected members:"<<obj.protected_member << endl;
+  };
+
+  int main(){
+    TargetClass targetObj;
+    FriendClass friendObj;
+    friendObj.MemberFunction(targetObj);
+    return 0;
+  }
+-----------------------------------------------------------------------------------------
+
+3: GLOBAL FRIEND FUNCTION
+#include <iostream>
+using namespace std;
+
+class ClassName{
+    private: DataType private_data;
+    public: ClassName(){ private_data = InitialValue;
+    }
+    //Friend declaration
+    Friend ReturnType GlobalFunction(ClassName &obj);
+};
+
+returnType GlobalFriend(ClassName &obj){
+    cout << "Value: " <<obj.private_data << endl;
+}
+
+int main(){
+    ClassName object;
+    GlobalFriend(object);
+    return 0;
+}
+
+------------------------------------------------------------------------------------------
+
+4: FRIEND CLASS FULL ACCESS
+#include <iostream>
+using namespace std;
+
+class HostClass{
+    private: DataType private_var;
+    protected: DataType protected_var;
+
+    public: HostClass(){}
+    //friend class GuestClass;
+};
+
+
+class GuestClass{
+    public: void display(HostClass &obj){
+        cout << obj.private_var << " " << obj.protected_var << endl;
+    }
+};
+
+int main(){
+    HostClass h;
+    GuestClass g;
+    g.display(h);
+
+    return 0;
+}
+------------------------------------------------------------------------------------------
+
 ------------------------------------------------------------------------------------------
 - FRIEND FUNCTIONS
 ------------------------------------------------------------------------------------------
