@@ -8,7 +8,7 @@ class A{
 };
 
 class B {
-public : B()
+public: B()
 {
    cout << "B's constructor is invoked: " << endl;
    }
@@ -19,6 +19,7 @@ class C: public B, public A{
       cout << "C's constructor is invoked: " << endl;
    }
 };
+
 int main(){
    C c;
    return 0;

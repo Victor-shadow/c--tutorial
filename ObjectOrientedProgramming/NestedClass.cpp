@@ -14,7 +14,6 @@ public:
         cout << "The value from an Outer class" << endl;
     }
 };
-
 int main(){
     //Create an object of the outer class
     Outer object;

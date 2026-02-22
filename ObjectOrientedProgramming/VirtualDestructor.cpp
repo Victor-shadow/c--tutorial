@@ -2,6 +2,7 @@
 //non-virtual destructor results in undefined behaviour
 //The base class should be defined with a virtual destructor
 #include <iostream>
+#include <memory>
 using namespace std;
 
 class Base{
