@@ -43,3 +43,12 @@
 # In C++, template metaprogramming refers to template perform computations at compile time
 # rather than at runtime
 # It involves recursive template structures where template call other templates during compilation 
+
+# --------------------------------------------------------------------------------------------------
+# GENERICS
+# Generics allow user defined types (Integer, String, ) to be a parameter to methods, classes, interfaces
+# Generic programming is implemented to improve efficiency of code, it enables the programmer to write a general algorithm which will work with all data types
+# The advantages of generic programming are:
+# 1: Code reusability
+# 2: Avoid function overloading
+# Generics can be implemented in C++ using  Templates where a data type T is passed as a parameter 
