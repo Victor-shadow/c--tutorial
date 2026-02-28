@@ -1,11 +1,11 @@
 #include <iostream>
 using namespace std;
 
-int n = 1000;
+int arr[5] = {100, 200, 300, 400, 500};
 int main(){
-    const int* ptr = &n;
-    cout << "Address stored at ptr: " << ptr<< endl;
-    ptr = ptr - 1;
-    cout << "New address at ptr is: " << ptr << endl;
+    int* ptr = &arr[100];
+    int* ptr2 = &arr[200];
+
+    cout << ptr2 - ptr << endl;
     return 0;
 }

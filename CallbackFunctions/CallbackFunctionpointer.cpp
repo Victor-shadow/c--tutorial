@@ -1,20 +1,16 @@
 #include <iostream>
 using namespace std;
-
-int add(int a, int b){
-    return a + b;
-}
-int multiply(int a, int b){
-    return a * b;
+//callback function
+int square(int x){
+    return x * x;
 }
 
-//pass a function pointer
-int invoke(int val, int output, int(*func) (int, int)){
-    return func(val, output);
+//A function that takes  a function pointer -stores memory address of a func
+void FunctionPointer(const int value, int(*func) (int)){
+    cout << "Result: " << func(value) << endl;
 }
 int main(){
-    //Pass address
-    cout << invoke(20, 10, &add) << '\n';
-    cout << invoke(15, 10, &multiply);
+    FunctionPointer(5, square);
     return 0;
+
 }

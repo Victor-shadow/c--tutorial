@@ -12,6 +12,7 @@ public:
     int area() const{
         return length * breadth;
     }
+
     int main(){
         const shared_ptr<weakPointer> pointer(new weakPointer(100, 200));
         const weak_ptr<weakPointer> pointer2(pointer);

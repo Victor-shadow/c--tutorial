@@ -1,14 +1,12 @@
 #include <iostream>
 using namespace std;
 
-int i = 10;
-char c = 'A';
+int n = 3;
+char c = 'C';
 int main(){
-    //Two variables
-    cout << (int)c << endl; //conversion of c to ASCII Integer
-    //Add i and c
-    int sum = i + c; //automatic type conversion
-    //print sum
+    //convert char data type into int
+    cout << (int)c << endl;
+    int sum = n + c;
     cout << sum;
     return 0;
 }

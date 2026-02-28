@@ -1,28 +1,31 @@
+//Deleting a derived class object using a pointer of base class type that has a
+//non-virtual destructor results in undefined behaviour
+//The base class should be defined with a virtual destructor
 #include <iostream>
+#include <memory>
 using namespace std;
 
-class base{
-    public: base(){
-        cout << "This is a base constructor" << endl;
+class Base{
+public: Base(){
+        std::cout << " constructor Base: " << std::endl;
     }
-    virtual ~base(){ //guarantees that the object of the derived class is destroyed properly
-        cout << "This is a destructor\n" << endl;
-    }
+    virtual ~Base(){
+    std::cout << "destructor Base : " << std::endl;
+   }
 };
 
-class derived: public base{
-    public: derived(){
-        cout << "This is a derived constructor" << endl;
-    }
-    ~derived(){
-        cout << "This is a derived destructor\n" << endl;
-    }
+class Derived: public Base{
+public: Derived(){
+    std::cout << " constructor Derived : " << std::endl;
+}
+    ~Derived(){
+    std::cout << " destructor Derived : " << std::endl;
+     }
 };
-
 int main(){
-    derived* d = new derived();
-    base* b = d;
-    delete b;
-    getchar();
+    unique_ptr<Base> ptr = make_unique<Derived>();
+    cout << ptr.get() << endl;
     return 0;
 }
+
+

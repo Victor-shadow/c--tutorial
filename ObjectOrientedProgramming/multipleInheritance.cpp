@@ -1,37 +1,26 @@
 #include <iostream>
 using namespace std;
 
-class LandVehicle{
-public:
-  void landInfo(){
-    cout << "This is a land type vehicle: "<< endl;
-  }
-
-  virtual ~LandVehicle()= default;
+class A{
+   public: A(){
+      cout << "A's constructor is invoked: " << endl;
+   }
 };
 
-class WaterVehicle: virtual public LandVehicle{
-public:
-  void waterInfo(){
-    cout << "This is a water type vehicle: " << endl;
-  }
-  ~WaterVehicle() override{}
+class B {
+public: B()
+{
+   cout << "B's constructor is invoked: " << endl;
+   }
 };
-//Derived class inherits from both classes
-class AirVehicle: virtual public LandVehicle, public WaterVehicle{
-public: AirVehicle(){
-    cout << "This is an air type vehicle: " << endl;
-  }
-  ~AirVehicle() override{}
+
+class C: public B, public A{
+   public: C(){
+      cout << "C's constructor is invoked: " << endl;
+   }
 };
 
 int main(){
-  AirVehicle obj;
-
-  obj.landInfo();
-  obj.waterInfo();
-
-  return 0;
-
+   C c;
+   return 0;
 }
-
