@@ -4,7 +4,7 @@ template<class A, class B> class Generic{
     A x;
     B y;
 
-public: A(){
+public: Generic(){
     cout << "Constructor invoked: " << endl;
   }
 };

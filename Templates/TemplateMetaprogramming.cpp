@@ -6,7 +6,7 @@ template<int N> struct Factorial{
 };
 
 template <> struct Factorial<0>{
-    static const int value = 1;
+    static constexpr int value = 1;
 };
 int main(){
     cout << "Factorial of 10 is: " << Factorial<10>::value;

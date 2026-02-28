@@ -11,9 +11,9 @@ template<class T, int max> int arrMin(T arr [], int n){
 
 int main(){
     int arr1[] = {100, 200, 300, 400, 500};
-    int n1 = sizeof(arr1) / sizeof(arr1[0]);
+    constexpr int n1 = sizeof(arr1) / sizeof(arr1[0]);
     char arr2[] = {'a', 'b', 'c'};
-    int n2 = sizeof(arr2) / sizeof(arr2[0]);
+    constexpr int n2 = sizeof(arr2) / sizeof(arr2[0]);
     cout << arrMin<int, 10000>(arr1, n1) << endl;
     cout << arrMin<char, 256>(arr2, n2);
     return 0;

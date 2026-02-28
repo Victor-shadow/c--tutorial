@@ -11,8 +11,8 @@ template<typename T> class TemplateClass{
     }
 };
 int main(){
-    TemplateClass intValues(100, 200);
-    TemplateClass doubleValues(500.5, 1000.5);
+    TemplateClass<int> intValues(100, 200);
+    TemplateClass<double> doubleValues(500.5, 1000.5);
     intValues.getValues();
     cout << endl;
     doubleValues.getValues();
