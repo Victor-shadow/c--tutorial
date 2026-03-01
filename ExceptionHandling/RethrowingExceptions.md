@@ -7,7 +7,7 @@
 # 1: Exception type Preservation
 # The preservation of exception handling in C++ is a feature. It enables catch blocks at levels to efficiently handle specific types of exceptions allowing for more precise error management
 # 2: Additional Processing
-# Additionally rethrowing Exceptions provides the opportunity to perform operations or log extra information about the exception before it is caught again further up the call stack
+# Additionally, rethrowing Exceptions provides the opportunity to perform operations or log extra information about the exception before it is caught again further up the call stack
 # *add debugging details offer context or encapsulate the original exception with another exception to provide more helpful information to higher level catch blocks
 
 # try {
@@ -27,7 +27,7 @@
 
 # try{
 #  try{
-#   throw runtime_error("Nested exception)
+#   throw runtime_error("Nested exception")
 # }
 # catch(const exception& nested){
 #  throw_with_nested(logic_error("Outer exception));

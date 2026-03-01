@@ -17,7 +17,7 @@
 # throw Name();
 #   }
 # catch(Name e){
-#  cout << "Caught Exception Class\n << endl;
+#  cout << "Caught Exception Class\n" << endl;
 #    }
 # return 0;
 # }
@@ -26,7 +26,7 @@
 
 # When exception classes are related through inheritance, the order of the catch block becomes important
 # C++ allows throwing objects of user defined classes as exceptions
-# Exception-handling is type-based, enabling fine grained control
+# Exception-handling is type-based, enabling fine-grained control
 # In inheritance based exceptions, catch order matters
 # Constructors can throw and handle exceptions for input validations
 # User-defined exceptions improve clarity, maintainability and robustness 

@@ -1,6 +1,6 @@
 # In C++, unexpected cases/errors may occur during program execution such as attempting to divide by zero, accessing a non-existent file or using invalid data
-# This issues are called exceptions. These exceptions must be handled to avoid abnormal termination of the program
-# C++ provides try-catch block to handle these exceptions. A value that represents an Exception is thrown in the try block and it is caught and handled in the catch block
+# These issues are called exceptions. These exceptions must be handled to avoid abnormal termination of the program
+# C++ provides try-catch block to handle these exceptions. A value that represents an Exception is thrown in the try block and, it is caught and handled in the catch block
 # These values are generally objects of a class that represent the type of exceptions
 
 # In-Built Exception Classes
@@ -28,7 +28,7 @@
 # public: 
 # //Override what() function
 # const char* what() const noexcept override {
-#  return "This is a custom exception: ";
+#  return "This is a custom exception:";
 #      }
 # };
 # int main(){
@@ -37,7 +37,7 @@
 #  throw CustomExcept();
 # }
 # catch(const CustomExcept& e){
-#  cout << "Caught an Exception:  << e.what();
+#  cout << "Caught an Exception: "  << e.what();
 # }
 # return 0;
 # }
@@ -61,7 +61,7 @@
 # int main(){
 # try {
 #   throw CustomExcept(
-#   "This is a custom runtim exception: "
+#   "This is a custom runtime exception: "
 #    );
 #  }
 #  catch(const CustomExcept &e){

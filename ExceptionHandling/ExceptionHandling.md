@@ -121,7 +121,7 @@
 
 # }
 
-# NEED FOR EXCEPTION HANDLIING
+# NEED FOR EXCEPTION HANDLING
 # 1: Separation of concerns - try-catch blocks keep error handling logic separate from normal program flow, improving readability and maintainability
 # 2: Selective handling: A function can handle only the exceptions it chooses and propagates others to the caller, enabling flexible and layered error handling
 # 3: Explicit exception specifications: Functions can throw exceptions using throw allowing callers to handle or further propagate them
@@ -133,4 +133,4 @@
 # 3: Always catch exceptions by reference to a constant to avoid accidental modifications
 # 4: Catching generic exceptions using catch (...) does not provide information about exception, so better  to catch specific exceptions to handle errors appropriately
 # 5: Failure to catch exceptions can cause the program to terminate unexpectedly. Always ensure exceptions are caught and handled properly to maintain stability
-# 6: Not releasing resources(e.g memory, file handles) after an exception can lead to resource leaks. Use proper cleanup mechanisms such as RAII or final blocks 
+# 6: Not releasing resources('e.g' memory, file handles) after an exception can lead to resource leaks. Use proper cleanup mechanisms such as RAII or final blocks 
